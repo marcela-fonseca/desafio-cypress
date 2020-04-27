@@ -31,7 +31,6 @@ describe('Testar fluxos na wave', () => {
     cy.get('.transference-card__actions button > div').click()
     cy.wait(1000)
     cy.get('[aria-label="Pagamento por cartão"]').click({force : true})
-   // cy.get('.multiselect__input').click()
     cy.get('[name="installments"]').click()
     cy.get('li:nth-child(4) > span').click()
     cy.get('.transference-card__actions button > div').click()
@@ -40,19 +39,5 @@ describe('Testar fluxos na wave', () => {
     cy.wait(3000)
     cy.get('.page-header__title').should('contain','Detalhes da cobrança')
     cy.get('.user-avatar__identity-name').should('contain', email)
-
-
   })
 })
-
-//Asserts
-
-
-//cy.get('button').should('be.visible')
-//cy.get(':radio').should('be.checked')
-//cy.get().contains('novo123')
-//cy.get('.tag__title').should('contain', `Entradas`)
-
-
-//https://docs.cypress.io/api/commands/contains.html#Syntax
-//https://docs.cypress.io/guides/references/assertions.html
