@@ -5,9 +5,9 @@ describe('Testar fluxos na wave', () => {
     cy.login('testesandbox01@dev.com.br', 'Inicial@1234')
   })
 
-  it.skip('Acessar dados cadastrais e alterar dados ', () => {
-    cy.get(':nth-child(6) > :nth-child(1) > :nth-child(1) > :nth-child(1) > .v-list__tile > .v-list__tile__title').click()
-    cy.get('[style=""] > :nth-child(2) > .v-list__group__header > .sidebar__second-level > .v-list__tile > .v-list__tile__title').click()
+  it('Acessar dados cadastrais e alterar dados ', () => {
+    cy.get(':nth-child(6) > > :nth-child(1) .v-list__tile__title').click()
+    cy.get('[style=""] > :nth-child(2) > .v-list__group__header').click()
     cy.wait(1000)
     cy.get('[data-test=edit-password]').click()
     cy.wait(5000)
@@ -18,10 +18,10 @@ describe('Testar fluxos na wave', () => {
     cy.get('[data-test=account-street-number]').type('62')
     cy.get('[data-test=save-edit]').click()
     cy.wait(1000)
-    cy.get(':nth-child(4) > .tag > .tag__content-wrapper > .tag__slot').should('contain', 'novo123')
+    cy.get(' li:nth-child(4) .tag__content-wrapper > div').should('contain', 'novo123')
   })
 
-  it('Acessar cobranças ', () => {
+  it.skip('Acessar cobranças ', () => {
     cy.visit("https://conta-beta-sandbox.wirecard.com.br/criar-cobranca")
     cy.wait(5000)
     cy.get('.news-banner__close-button > .icon').click()
